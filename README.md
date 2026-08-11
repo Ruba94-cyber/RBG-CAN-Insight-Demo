@@ -10,7 +10,7 @@ The Store product is paid (EUR 19.99) and includes a free trial. The application
 
 ![RBG CAN Insight feature tour](media/rbg-can-insight-gallery.gif)
 
-[Watch or download the 43-second feature tour](media/rbg-can-insight-offline-can-uds-demo.mp4)
+[Watch the 43-second feature tour on YouTube](https://youtu.be/UK2bLEdWWFA) or [download the demo kit release](https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/releases/tag/demo-v1.0).
 
 ## What you can inspect
 
