@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RBG CAN Insight is a Windows application for offline CAN trace, DBC, ISO-TP and UDS analysis.">
+  <title>RBG CAN Insight | Offline CAN and UDS Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="RBG CAN Insight home">
+      <img src="screenshots/logo.png" alt="" width="36" height="36">
+      <span>RBG CAN INSIGHT</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#workflows">Workflows</a>
+      <a href="#demo">Demo files</a>
+      <a href="PRIVACY.md">Privacy</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Windows desktop application</p>
+        <h1 id="hero-title">RBG CAN Insight</h1>
+        <p class="lead">Decode recorded CAN traffic, reconstruct ISO-TP/UDS activity and turn offline traces into engineering evidence.</p>
+        <div class="actions">
+          <a class="primary" href="https://apps.microsoft.com/detail/9NTZXFCKR81D?cid=github-pages-2026q3">Start the free trial</a>
+          <a class="secondary" href="#demo">Open the synthetic demo</a>
+        </div>
+        <p class="commercial">EUR 19.99 one-time purchase after the trial. Interface in English.</p>
+      </div>
+    </section>
+
+    <section class="intro band" id="workflows">
+      <div class="section-heading">
+        <p class="eyebrow">One local workflow</p>
+        <h2>From recorded frames to explainable findings</h2>
+      </div>
+      <div class="capabilities">
+        <article>
+          <span>01</span>
+          <h3>Import and decode</h3>
+          <p>Open ASC, BLF, TRC, CSV, candump and MDF4/MF4 traces, then apply one or more DBC databases.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Analyze diagnostics</h3>
+          <p>Reconstruct recorded ISO-TP messages and pair UDS requests with responses, DIDs, DTCs and routines.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Measure behavior</h3>
+          <p>Plot physical signals, rank changes and inspect rates, timing variation, bursts and estimated bus load.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase band dark">
+      <div class="section-heading">
+        <p class="eyebrow">Recorded diagnostic evidence</p>
+        <h2>Inspect UDS without connecting to a vehicle</h2>
+        <p>Every result comes from imported frames. RBG CAN Insight cannot transmit requests, change sessions, clear faults or start routines.</p>
+      </div>
+      <img src="screenshots/uds-analysis.png" alt="RBG CAN Insight UDS Analysis workspace showing synthetic transactions and diagnostic evidence">
+    </section>
+
+    <section class="showcase band light">
+      <div class="section-heading">
+        <p class="eyebrow">Signal investigation</p>
+        <h2>Keep mixed physical units readable</h2>
+        <p>Separate automatic scales prevent a smaller signal from disappearing beside a larger range.</p>
+      </div>
+      <img src="screenshots/signal-plot.png" alt="RBG CAN Insight plotting three synthetic signals with separate units">
+    </section>
+
+    <section class="demo band" id="demo">
+      <div class="section-heading">
+        <p class="eyebrow">Public synthetic dataset</p>
+        <h2>Try the complete workflow safely</h2>
+        <p>The demo trace and DBC are artificial. They contain no vehicle, manufacturer, employer or customer data.</p>
+      </div>
+      <div class="demo-actions">
+        <a href="samples/synthetic-drive.asc" download>Download synthetic ASC</a>
+        <a href="samples/synthetic-demo.dbc" download>Download synthetic DBC</a>
+        <a href="https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/issues">Report an issue</a>
+      </div>
+      <video controls preload="metadata" poster="media/youtube-thumbnail.png">
+        <source src="media/rbg-can-insight-offline-can-uds-demo.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="privacy band">
+      <div>
+        <p class="eyebrow">Local by design</p>
+        <h2>Your trace stays on your device</h2>
+      </div>
+      <p>RBG CAN Insight does not require an application account and does not intentionally upload traces, databases, diagnostic descriptions, reports or projects.</p>
+      <a href="PRIVACY.md">Read the privacy policy</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>Copyright 2026 Paolo Rubagotti</span>
+    <a href="https://apps.microsoft.com/detail/9NTZXFCKR81D?cid=github-pages-footer-2026q3">Microsoft Store</a>
+    <a href="https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo">GitHub</a>
+  </footer>
+</body>
+</html>
