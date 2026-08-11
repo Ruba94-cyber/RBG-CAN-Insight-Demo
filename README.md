@@ -10,7 +10,7 @@ The Store product is paid (EUR 19.99) and includes a free trial. The application
 
 ![RBG CAN Insight feature tour](media/rbg-can-insight-gallery.gif)
 
-[Watch the 67-second high-resolution application demo on YouTube](https://youtu.be/p0MefQX73b0), [watch the 59-second Short](https://youtube.com/shorts/7IUpF-O9zg8), or [download the demo kit release](https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/releases/tag/demo-v1.0).
+[Watch the 67-second high-resolution application demo on YouTube](https://youtu.be/p0MefQX73b0), [watch the 59-second Short](https://youtube.com/shorts/7IUpF-O9zg8), or [download the extended demo kit release](https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/releases/tag/demo-v1.1).
 
 ## What you can inspect
 
