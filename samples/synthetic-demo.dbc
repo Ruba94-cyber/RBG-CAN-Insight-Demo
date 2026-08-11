@@ -1,12 +1,29 @@
-VERSION "Synthetic RBG CAN Insight demo"
+VERSION ""
 
-BU_: DemoECU DemoBody DemoNode
+BO_ 256 EngineData: 8 ECM
+ SG_ EngCoolantTemp : 0|8@1+ (1,-40) [-40|200] "degC" Vector__XXX
+ SG_ EngineLoad : 8|8@1+ (0.5,0) [0|100] "%" Vector__XXX
+ SG_ OilTemp : 16|8@1+ (1,-40) [-40|200] "degC" Vector__XXX
+ SG_ BatteryVoltage : 24|8@1+ (0.1,0) [0|25.5] "V" Vector__XXX
 
-BO_ 256 EngineData: 8 DemoECU
- SG_ CoolantTemperature : 0|8@1+ (1,-40) [-40|200] "degC" DemoNode
- SG_ EngineLoad : 8|8@1+ (0.5,0) [0|100] "%" DemoNode
+BO_ 512 VehicleData: 8 BCM
+ SG_ VehicleSpeed : 0|16@1+ (0.01,0) [0|250] "km/h" Vector__XXX
+ SG_ OdometerDelta : 16|16@1+ (0.1,0) [0|6553.5] "m" Vector__XXX
+ SG_ BrakePedal : 32|8@1+ (1,0) [0|100] "%" Vector__XXX
 
-BO_ 512 VehicleData: 8 DemoBody
- SG_ VehicleSpeed : 0|16@1+ (0.01,0) [0|250] "km/h" DemoNode
+BO_ 768 PowertrainStatus: 8 PCM
+ SG_ EngineSpeed : 0|16@1+ (0.25,0) [0|16000] "rpm" Vector__XXX
+ SG_ ThrottlePosition : 16|8@1+ (0.4,0) [0|100] "%" Vector__XXX
+ SG_ SelectedGear : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ TorqueEstimate : 32|16@1+ (1,0) [0|65535] "Nm" Vector__XXX
 
-CM_ "Artificial definitions for demonstration only. Not derived from a vehicle or manufacturer.";
+BO_ 1024 ChassisStatus: 8 CHASSIS
+ SG_ SteeringAngle : 0|16@1- (0.1,0) [-780|780] "deg" Vector__XXX
+ SG_ BrakePressure : 16|16@1+ (0.1,0) [0|250] "bar" Vector__XXX
+ SG_ LateralAccel : 32|16@1- (0.001,0) [-20|20] "m/s2" Vector__XXX
+
+BO_ 1280 ThermalStatus: 8 THERMAL
+ SG_ IntakeAirTemp : 0|8@1+ (1,-40) [-40|200] "degC" Vector__XXX
+ SG_ FuelTemp : 8|8@1+ (1,-40) [-40|200] "degC" Vector__XXX
+ SG_ FanDuty : 16|8@1+ (0.5,0) [0|100] "%" Vector__XXX
+ SG_ TransmissionTemp : 24|8@1+ (1,-40) [-40|200] "degC" Vector__XXX

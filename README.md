@@ -24,10 +24,10 @@ The Store product is paid (EUR 19.99) and includes a free trial. The application
 
 ## Synthetic demo
 
-The files in [`samples`](samples/) are artificial and are not derived from a vehicle, manufacturer, employer or customer:
+The files in [`samples`](samples/) are artificial and are not derived from a vehicle, manufacturer, employer or customer. The trace contains 3,867 frames over 60 seconds; the DBC defines 5 messages and 18 signals:
 
-- `synthetic-drive.asc`: recorded-style CAN and UDS frames
-- `synthetic-demo.dbc`: matching synthetic signal definitions
+- `synthetic-drive.asc`: recorded-style CAN and UDS frames with repeated diagnostic activity
+- `synthetic-demo.dbc`: matching powertrain, vehicle, chassis and thermal signal definitions
 
 To try the workflow:
 
