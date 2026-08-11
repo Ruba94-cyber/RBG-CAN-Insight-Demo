@@ -38,8 +38,8 @@ def title_card() -> Image.Image:
     draw = ImageDraw.Draw(image)
     draw.rounded_rectangle((160, 170, WIDTH - 160, HEIGHT - 170), 24, fill=PANEL)
     centered(draw, "RBG CAN INSIGHT", 305, font(76, True), WHITE)
-    centered(draw, "Offline CAN trace and UDS analysis for Windows", 420, font(38), MUTED)
-    centered(draw, "Local processing  |  DBC decoding  |  ISO-TP/UDS  |  Signal analysis", 515, font(30), BLUE)
+    centered(draw, "Offline CAN and diagnostic investigation for Windows", 420, font(38), MUTED)
+    centered(draw, "DBC decoding  |  ISO-TP/UDS  |  Findings  |  ECU evidence", 515, font(30), BLUE)
     centered(draw, "Synthetic demonstration - no vehicle or company data", 650, font(26), MUTED)
     return image
 
@@ -68,7 +68,7 @@ def outro_card() -> Image.Image:
     centered(draw, "Analyze recorded CAN traffic locally", 300, font(58, True), WHITE)
     centered(draw, "Paid Windows app with a free trial", 420, font(34), MUTED)
     centered(draw, "apps.microsoft.com/detail/9NTZXFCKR81D", 545, font(34, True), BLUE)
-    centered(draw, "Version 2.2.1", 650, font(28), MUTED)
+    centered(draw, "Version 2.3.0", 650, font(28), MUTED)
     return image
 
 
@@ -92,10 +92,12 @@ def build_video() -> None:
     try:
         hold(writer, title_card(), 5)
         slides = [
+            ("offline-findings.png", "Prioritize recorded diagnostic findings", "Review severity, evidence and source frames without sending requests to an ECU."),
+            ("diagnostic-sequence.png", "Reconstruct the diagnostic sequence", "Follow recorded sessions, reads, DTC checks and routines in chronological order."),
             ("uds-analysis.png", "Reconstruct recorded ISO-TP and UDS traffic", "Pair requests and responses, inspect DIDs, DTCs, routines and negative responses."),
             ("signal-plot.png", "Decode and plot physical signals", "Use DBC definitions, mixed-unit scales, zoom, cursors and frame navigation."),
-            ("change-matrix.png", "Find what changed", "Rank stable, variable and anomalous signals and jump back to the source frames."),
-            ("statistics.png", "Measure timing and estimated bus load", "Review rate, period, jitter, bursts, payload length and channel load."),
+            ("byte-matrix-details.png", "Inspect Byte Matrix evidence", "Open decoded signal details directly from the selected message row."),
+            ("diagnostic-catalog-coverage.png", "Measure diagnostic catalog coverage", "Compare recorded services, DIDs, DTCs and routines with local CDD or ODX data."),
         ]
         for filename, heading, detail in slides:
             for step in range(8):
@@ -111,9 +113,10 @@ def build_gallery_gif() -> None:
         screenshot_card(name, heading, detail, 1.0)
         for name, heading, detail in [
             ("uds-analysis.png", "Recorded UDS evidence", "Offline reconstruction from imported frames."),
+            ("offline-findings.png", "Diagnostic findings", "Prioritized evidence linked to recorded source frames."),
+            ("diagnostic-sequence.png", "Diagnostic sequence", "Chronological reconstruction of recorded operations."),
             ("signal-plot.png", "Physical signal plotting", "Separate scales keep mixed units readable."),
-            ("change-matrix.png", "Change Matrix", "Prioritize variable and anomalous signals."),
-            ("statistics.png", "Trace statistics", "Timing, jitter, bursts and estimated bus load."),
+            ("byte-matrix-details.png", "Byte Matrix details", "Decoded signals expand under the selected row."),
         ]
     )
     cards.append(outro_card())
@@ -132,9 +135,9 @@ def build_thumbnail() -> None:
     thumb = Image.new("RGB", (1280, 720), BG)
     draw = ImageDraw.Draw(thumb)
     draw.rounded_rectangle((60, 60, 1220, 660), 24, fill=PANEL)
-    draw.text((110, 150), "OFFLINE CAN", font=font(74, True), fill=WHITE)
-    draw.text((110, 245), "TRACE + UDS ANALYSIS", font=font(74, True), fill=BLUE)
-    draw.text((115, 390), "DBC decoding  |  ISO-TP  |  Signal plots", font=font(32), fill=MUTED)
+    draw.text((110, 150), "OFFLINE CAN + UDS", font=font(68, True), fill=WHITE)
+    draw.text((110, 245), "INVESTIGATION SUITE", font=font(68, True), fill=BLUE)
+    draw.text((115, 390), "Findings  |  DBC  |  ISO-TP  |  ECU evidence", font=font(30), fill=MUTED)
     draw.text((115, 485), "RBG CAN INSIGHT", font=font(43, True), fill=WHITE)
     thumb.save(MEDIA / "youtube-thumbnail.png", optimize=True)
 
@@ -143,5 +146,7 @@ if __name__ == "__main__":
     build_video()
     build_gallery_gif()
     build_thumbnail()
+    title_card().save(MEDIA / "video-title.png", optimize=True)
+    outro_card().save(MEDIA / "video-outro.png", optimize=True)
     for path in sorted(MEDIA.iterdir()):
         print(f"{path.name}: {path.stat().st_size} bytes")

@@ -2,7 +2,7 @@
 
 RBG CAN Insight is a Windows desktop application for local, offline analysis of recorded CAN traffic.
 
-It imports common trace formats, decodes messages and signals with DBC databases, reconstructs ISO-TP/UDS activity, plots signal timelines, highlights changes and calculates per-identifier statistics. It does not connect to vehicles, transmit CAN frames or perform diagnostic programming.
+It imports common trace formats, decodes messages and signals with DBC databases, reconstructs ISO-TP/UDS activity, prioritizes source-linked findings, builds a recorded ECU snapshot, plots signal timelines and calculates per-identifier statistics. It does not connect to vehicles, transmit CAN frames or perform diagnostic programming.
 
 [Try RBG CAN Insight on Microsoft Store](https://apps.microsoft.com/detail/9NTZXFCKR81D?cid=github-demo-2026q3)
 
@@ -10,7 +10,7 @@ The Store product is paid (EUR 19.99) and includes a free trial. The application
 
 ![RBG CAN Insight feature tour](media/rbg-can-insight-gallery.gif)
 
-[Watch the 67-second high-resolution application demo on YouTube](https://youtu.be/p0MefQX73b0), [watch the 59-second Short](https://youtube.com/shorts/7IUpF-O9zg8), or [download the extended demo kit release](https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/releases/tag/demo-v1.1).
+[Watch the 97-second RBG CAN Insight 2.3 application demo on YouTube](https://youtu.be/sXL5LL8p23U), [watch the 59-second Short](https://youtube.com/shorts/7IUpF-O9zg8), or [download the extended demo kit release](https://github.com/Ruba94-cyber/RBG-CAN-Insight-Demo/releases/tag/demo-v1.1).
 
 ## What you can inspect
 
@@ -18,6 +18,9 @@ The Store product is paid (EUR 19.99) and includes a free trial. The application
 - DBC message and signal decoding
 - ISO-TP reconstruction and UDS request/response analysis
 - DIDs, DTC activity, routines and negative responses found in recordings
+- Prioritized offline findings with source-frame evidence
+- Chronological diagnostic sequence and recorded ECU identification snapshot
+- CDD/ODX coverage for observed services, DIDs, DTCs and routines
 - Signal plots with separate scales for different physical units
 - Change Matrix, Byte Matrix, timing statistics and estimated bus load
 - Offline DID-to-CAN correlation using CDD/ODX descriptions
@@ -34,13 +37,25 @@ To try the workflow:
 1. Install or start the free trial from Microsoft Store.
 2. Open `samples/synthetic-drive.asc`.
 3. Load `samples/synthetic-demo.dbc`.
-4. Inspect **UDS Analysis**, **Signals & Plot**, **Change Matrix** and **Statistics**.
+4. Inspect **Findings**, **Sequence**, **ECU Snapshot**, **Catalog Coverage**, **Signals & Plot**, **Byte Matrix** and **Statistics**.
 
 ## Screenshots
 
 ### Recorded UDS evidence
 
 ![UDS analysis](screenshots/uds-analysis.png)
+
+### Prioritized diagnostic findings
+
+![Offline diagnostic findings](screenshots/offline-findings.png)
+
+### Chronological diagnostic sequence
+
+![Diagnostic sequence](screenshots/diagnostic-sequence.png)
+
+### Expandable Byte Matrix details
+
+![Byte Matrix details](screenshots/byte-matrix-details.png)
 
 ### Mixed-unit signal plotting
 
