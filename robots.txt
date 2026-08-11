@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ruba94-cyber.github.io/RBG-CAN-Insight-Demo/sitemap.xml
